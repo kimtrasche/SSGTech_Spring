@@ -4,12 +4,22 @@ import sinc.service.SincService;
 
 public class SincCtrl {
 
+	/* Setter Injection
 	private SincService service;
 	
 	
 	public void setService(SincService service) {
 	
 		this.service= service;
+	}
+	*/
+	
+	
+	/*Constuctor Injection*/
+	private SincService service;
+	
+	public SincCtrl(SincService service) {
+		this.service = service;
 	}
 	
 	
@@ -19,5 +29,4 @@ public class SincCtrl {
 		return service.sayEcho(msg);
 		
 	}
-	
 }
