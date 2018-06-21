@@ -1,13 +1,18 @@
 package sinc.ctrl;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+
 import sinc.service.SincService;
 
+@Controller
 public class SincCtrl {
 
-	/* Setter Injection
+	@Resource(name="service")
 	private SincService service;
 	
-	
+	/* Setter Injection
 	public void setService(SincService service) {
 	
 		this.service= service;
@@ -15,12 +20,11 @@ public class SincCtrl {
 	*/
 	
 	
-	/*Constuctor Injection*/
-	private SincService service;
-	
+	/*Constuctor Injection
 	public SincCtrl(SincService service) {
 		this.service = service;
 	}
+	*/
 	
 	
 	public String sayEcho(String msg) {

@@ -11,25 +11,45 @@
        http://www.springframework.org/schema/context 
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+<!--     
     <bean id="samsung"  class="tv.model.vo.Stv" />
     <bean id="lg"  class="tv.model.vo.Ltv" />
+ -->    
     
-    
-    
+    <!-- Setter Injection -->
     <!-- ctrl,  service, dao-->
     <!-- SincCtrl ctrl new SincCtrl(); -->
-    <bean name="ctrl" class="sinc.ctrl.SincCtrl">
-        <property name="service" ref="service"/> <!--name= setter의 역할 , ref= 파라미터 객체 = Service에 지정한 name값 -->
+    <!--     <bean name="ctrl" class="sinc.ctrl.SincCtrl">
+        <property name="service" ref="service"/> name= setter의 역할 , ref= 파라미터 객체 = Service에 지정한 name값
     
     
     </bean>
     <bean name="service" class="sinc.service.SincService">
-        <property name="dao" ref="dao"/> <!--name= setter의 역할 , ref=파라미터 객체 = DAO에 지정한 name값 -->
+        <property name="dao" ref="dao"/> name= setter의 역할 , ref=파라미터 객체 = DAO에 지정한 name값
     
     </bean>
     
     
-    <bean name="dao" class="sinc.model.sql.SincDao"/><!-- DAO이후에 호출하는 서비스가 없기때문에 닫힌태그로 마물 -->
+    <bean name="dao" class="sinc.model.sql.SincDao"/>DAO이후에 호출하는 서비스가 없기때문에 닫힌태그로 마물
+     -->
     
+    
+    <!-- Contructor Injection -->
+    
+    <!-- <bean name="ctrl" class="sinc.ctrl.SincCtrl">
+        <constructor-arg ref="service" />
+    
+    
+    </bean>
+    <bean name="service" class="sinc.service.SincService">
+        <constructor-arg ref="dao" />
+    </bean>
+    
+    
+    <bean name="dao" class="sinc.model.sql.SincDao"/>
+    -->
+    
+    
+    <context:component-scan base-package="*"/>
     
 </beans>
